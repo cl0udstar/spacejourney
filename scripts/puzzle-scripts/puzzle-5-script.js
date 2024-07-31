@@ -216,8 +216,9 @@ function addToDisplay(letter) {
         isInputWrong = false;
     }
     var display = document.getElementById('display');
-    display.style.color = '#7ECD07';
+    display.style.color = '#CAF4FF';
     display.style.textAlign = 'center';
+    display.style.boxShadow = '0 0 6px 2px #CAF4FF';
     display.value += letter.textContent; // Use the button's text content
 }
   
