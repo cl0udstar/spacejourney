@@ -229,7 +229,11 @@
     padding: 20px;
 }
 
-.letter-button, .keypad-buttons button{
+.keypad-buttons button {
+    box-shadow: 0 0 6px 2px #CAF4FF;
+}
+
+.letter-button, .keypad-buttons button {
     cursor: pointer;
     margin: 5px;
     padding: 10px 15px;
@@ -237,7 +241,6 @@
     border-radius: 5px;
     border: 2px solid #6c6c6c;
     background-color: #e3e2e2;
-    box-shadow: 0 0 6px 2px #CAF4FF;
 }
 
 .letter-circle {
@@ -305,7 +308,7 @@
     text-align: center;
     border: 2px solid;
     border-radius: 5px;
-    background-color: #ccc;
+    background-color: #6D8B74;
 }
 
 .alphabet1 p, .alphabet2 p {
