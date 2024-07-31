@@ -39,26 +39,26 @@
                     </div>
                     <div class="keypad-buttons">
                         <div class="keypad-row1">
-                            <button id="letterButton" onclick="addToDisplay(this)">F</button>
-                            <button id="letterButton" onclick="addToDisplay(this)">O</button>
-                            <button id="letterButton" onclick="addToDisplay(this)">X</button>
+                            <button class="letter-button" onclick="addToDisplay(this)">F</button>
+                            <button class="letter-button" onclick="addToDisplay(this)">O</button>
+                            <button class="letter-button" onclick="addToDisplay(this)">X</button>
                         </div>
                         
                         <div class="keypad-row2">
-                            <button id="letterButton" onclick="addToDisplay(this)">D</button>
-                            <button id="letterButton" onclick="addToDisplay(this)">K</button>
-                            <button id="letterButton" onclick="addToDisplay(this)">H</button>
+                            <button class="letter-button" onclick="addToDisplay(this)">D</button>
+                            <button class="letter-button" onclick="addToDisplay(this)">K</button>
+                            <button class="letter-button" onclick="addToDisplay(this)">H</button>
                         </div>
                         
                         <div class="keypad-row3">
-                            <button id="letterButton" onclick="addToDisplay(this)">S</button>
-                            <button id="letterButton" onclick="addToDisplay(this)">I</button>
-                            <button id="letterButton" onclick="addToDisplay(this)">J</button>
+                            <button class="letter-button" onclick="addToDisplay(this)">S</button>
+                            <button class="letter-button" onclick="addToDisplay(this)">I</button>
+                            <button class="letter-button" onclick="addToDisplay(this)">J</button>
                         </div>
     
                         <div class="keypad-row4">
                             <button onclick="clearInput()"><i class="fa-solid fa-square-xmark"></i></button>
-                            <button id="letterButton" onclick="addToDisplay(this)">M</button>
+                            <button id="letter-button" onclick="addToDisplay(this)">M</button>
                             <button onclick="checkInput()"><i class="fa-solid fa-square-check"></i></button>
                         </div>
                     </div>
@@ -355,43 +355,46 @@
         <script src="../scripts/cookies/accessibility-cookie.js"></script>
 
         <script>
-            const button = document.querySelectorAll('letterButton');
-    
-            button.addEventListener('mousedown', function() {
-                // Save the current box shadow style
-                const originalBoxShadow = this.style.boxShadow;
-    
-                // Apply the new box shadow style
-                this.style.boxShadow = '0 0 7px 4px #CAF4FF';
-    
-                // Use mouseup event to revert to the original style when the mouse button is released
-                button.addEventListener('mouseup', function() {
-                    this.style.boxShadow = originalBoxShadow;
-                }, { once: true });
-    
-                // Use mouseleave event to revert to the original style if the mouse leaves the button
-                button.addEventListener('mouseleave', function() {
-                    this.style.boxShadow = originalBoxShadow;
-                }, { once: true });
-            });
-    
-            // For touch devices, use touchstart and touchend events
-            button.addEventListener('touchstart', function() {
-                // Save the current box shadow style
-                const originalBoxShadow = this.style.boxShadow;
-    
-                // Apply the new box shadow style
-                this.style.boxShadow = '0 0 7px 4px #CAF4FF';
-    
-                // Use touchend event to revert to the original style when the touch ends
-                button.addEventListener('touchend', function() {
-                    this.style.boxShadow = originalBoxShadow;
-                }, { once: true });
-    
-                // Use touchcancel event to revert to the original style if the touch is canceled
-                button.addEventListener('touchcancel', function() {
-                    this.style.boxShadow = originalBoxShadow;
-                }, { once: true });
+            // Apply the box shadow change on hold logic to all buttons with the class "keypad-button"
+            const buttons = document.querySelectorAll('.keypad-button');
+
+            buttons.forEach(button => {
+                button.addEventListener('mousedown', function() {
+                    // Save the current box shadow style
+                    const originalBoxShadow = this.style.boxShadow;
+
+                    // Apply the new box shadow style
+                    this.style.boxShadow = '5px 5px 10px rgba(0, 0, 0, 0.5)';
+
+                    // Use mouseup event to revert to the original style when the mouse button is released
+                    button.addEventListener('mouseup', function() {
+                        this.style.boxShadow = originalBoxShadow;
+                    }, { once: true });
+
+                    // Use mouseleave event to revert to the original style if the mouse leaves the button
+                    button.addEventListener('mouseleave', function() {
+                        this.style.boxShadow = originalBoxShadow;
+                    }, { once: true });
+                });
+
+                // For touch devices, use touchstart and touchend events
+                button.addEventListener('touchstart', function() {
+                    // Save the current box shadow style
+                    const originalBoxShadow = this.style.boxShadow;
+
+                    // Apply the new box shadow style
+                    this.style.boxShadow = '5px 5px 10px rgba(0, 0, 0, 0.5)';
+
+                    // Use touchend event to revert to the original style when the touch ends
+                    button.addEventListener('touchend', function() {
+                        this.style.boxShadow = originalBoxShadow;
+                    }, { once: true });
+
+                    // Use touchcancel event to revert to the original style if the touch is canceled
+                    button.addEventListener('touchcancel', function() {
+                        this.style.boxShadow = originalBoxShadow;
+                    }, { once: true });
+                });
             });
         </script>
     </body>
