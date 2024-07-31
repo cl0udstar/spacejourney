@@ -57,9 +57,9 @@
                         </div>
     
                         <div class="keypad-row4">
-                            <button onclick="clearInput()"><i class="fa-solid fa-square-xmark"></i></button>
-                            <button id="letter-button" onclick="addToDisplay(this)">M</button>
-                            <button onclick="checkInput()"><i class="fa-solid fa-square-check"></i></button>
+                            <button class="letter-button" onclick="clearInput()"><i class="fa-solid fa-square-xmark"></i></button>
+                            <button class="letter-button" onclick="addToDisplay(this)">M</button>
+                            <button class="letter-button" onclick="checkInput()"><i class="fa-solid fa-square-check"></i></button>
                         </div>
                     </div>
                 </div>
@@ -364,7 +364,7 @@
                     const originalBoxShadow = this.style.boxShadow;
 
                     // Apply the new box shadow style
-                    this.style.boxShadow = '5px 5px 10px rgba(0, 0, 0, 0.5)';
+                    this.style.boxShadow = '0 0 7px 4px #CAF4FF';
 
                     // Use mouseup event to revert to the original style when the mouse button is released
                     button.addEventListener('mouseup', function() {
@@ -383,7 +383,7 @@
                     const originalBoxShadow = this.style.boxShadow;
 
                     // Apply the new box shadow style
-                    this.style.boxShadow = '5px 5px 10px rgba(0, 0, 0, 0.5)';
+                    this.style.boxShadow = '0 0 7px 4px #CAF4FF';
 
                     // Use touchend event to revert to the original style when the touch ends
                     button.addEventListener('touchend', function() {
