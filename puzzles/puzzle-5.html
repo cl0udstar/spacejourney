@@ -353,5 +353,46 @@
 
         <script src="../scripts/puzzle-scripts/puzzle-5-script.js"></script>
         <script src="../scripts/cookies/accessibility-cookie.js"></script>
+
+        <script>
+            const button = document.getElementById('letterButton');
+    
+            button.addEventListener('mousedown', function() {
+                // Save the current box shadow style
+                const originalBoxShadow = this.style.boxShadow;
+    
+                // Apply the new box shadow style
+                this.style.boxShadow = '0 0 7px 4px #CAF4FF';
+    
+                // Use mouseup event to revert to the original style when the mouse button is released
+                button.addEventListener('mouseup', function() {
+                    this.style.boxShadow = originalBoxShadow;
+                }, { once: true });
+    
+                // Use mouseleave event to revert to the original style if the mouse leaves the button
+                button.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = originalBoxShadow;
+                }, { once: true });
+            });
+    
+            // For touch devices, use touchstart and touchend events
+            button.addEventListener('touchstart', function() {
+                // Save the current box shadow style
+                const originalBoxShadow = this.style.boxShadow;
+    
+                // Apply the new box shadow style
+                this.style.boxShadow = '0 0 7px 4px #CAF4FF';
+    
+                // Use touchend event to revert to the original style when the touch ends
+                button.addEventListener('touchend', function() {
+                    this.style.boxShadow = originalBoxShadow;
+                }, { once: true });
+    
+                // Use touchcancel event to revert to the original style if the touch is canceled
+                button.addEventListener('touchcancel', function() {
+                    this.style.boxShadow = originalBoxShadow;
+                }, { once: true });
+            });
+        </script>
     </body>
 </html>
