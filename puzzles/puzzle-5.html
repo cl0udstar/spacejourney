@@ -39,27 +39,27 @@
                     </div>
                     <div class="keypad-buttons">
                         <div class="keypad-row1">
-                            <button class="letter-button" onclick="addToDisplay(this)">F</button>
-                            <button class="letter-button" onclick="addToDisplay(this)">O</button>
-                            <button class="letter-button" onclick="addToDisplay(this)">X</button>
+                            <button class="keypad-letter-button" onclick="addToDisplay(this)">F</button>
+                            <button class="keypad-letter-button" onclick="addToDisplay(this)">O</button>
+                            <button class="keypad-letter-button" onclick="addToDisplay(this)">X</button>
                         </div>
                         
                         <div class="keypad-row2">
-                            <button class="letter-button" onclick="addToDisplay(this)">D</button>
-                            <button class="letter-button" onclick="addToDisplay(this)">K</button>
-                            <button class="letter-button" onclick="addToDisplay(this)">H</button>
+                            <button class="keypad-letter-button" onclick="addToDisplay(this)">D</button>
+                            <button class="keypad-letter-button" onclick="addToDisplay(this)">K</button>
+                            <button class="keypad-letter-button" onclick="addToDisplay(this)">H</button>
                         </div>
                         
                         <div class="keypad-row3">
-                            <button class="letter-button" onclick="addToDisplay(this)">S</button>
-                            <button class="letter-button" onclick="addToDisplay(this)">I</button>
-                            <button class="letter-button" onclick="addToDisplay(this)">J</button>
+                            <button class="keypad-letter-button" onclick="addToDisplay(this)">S</button>
+                            <button class="keypad-letter-button" onclick="addToDisplay(this)">I</button>
+                            <button class="keypad-letter-button" onclick="addToDisplay(this)">J</button>
                         </div>
     
                         <div class="keypad-row4">
-                            <button class="letter-button" onclick="clearInput()"><i class="fa-solid fa-square-xmark"></i></button>
-                            <button class="letter-button" onclick="addToDisplay(this)">M</button>
-                            <button class="letter-button" onclick="checkInput()"><i class="fa-solid fa-square-check"></i></button>
+                            <button class="keypad-letter-button" onclick="clearInput()"><i class="fa-solid fa-square-xmark"></i></button>
+                            <button class="keypad-letter-button" onclick="addToDisplay(this)">M</button>
+                            <button class="keypad-letter-button" onclick="checkInput()"><i class="fa-solid fa-square-check"></i></button>
                         </div>
                     </div>
                 </div>
@@ -355,8 +355,8 @@
         <script src="../scripts/cookies/accessibility-cookie.js"></script>
 
         <script>
-            // Apply the box shadow change on hold logic to all buttons with the class "keypad-button"
-            const buttons = document.querySelectorAll('.keypad-button');
+            // Apply the box shadow change on hold logic to all buttons with the class "keypad-letter-button"
+            const buttons = document.querySelectorAll('.keypad-letter-button');
 
             buttons.forEach(button => {
                 button.addEventListener('mousedown', function() {
