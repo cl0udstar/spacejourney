@@ -266,7 +266,7 @@ function clearInput() {
 
 // Function to update keypad button labels based on the matched sequence
 function updateKeypadButtons(matchedSequence) {
-    const letterButtons = document.querySelectorAll('.keypad-letter-button');
+    const letterButtons = document.querySelectorAll('#letterButton');
 
     const chars = matchedSequence.split('');
 
